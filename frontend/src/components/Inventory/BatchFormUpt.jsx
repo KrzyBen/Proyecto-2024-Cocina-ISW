@@ -4,6 +4,7 @@ const BatchFormUpt = ({ batchToEdit, onSubmit }) => {
   const [batch, setBatch] = useState({
     acquisitionDate: '',
     totalItems: 1,
+    originPurchase: '', // Campo inicializado
   });
 
   useEffect(() => {
@@ -11,6 +12,7 @@ const BatchFormUpt = ({ batchToEdit, onSubmit }) => {
       setBatch({
         acquisitionDate: batchToEdit.acquisitionDate,
         totalItems: batchToEdit.totalItems,
+        originPurchase: batchToEdit.originPurchase || '', // Asegura un valor predeterminado
       });
     }
   }, [batchToEdit]);
@@ -19,7 +21,7 @@ const BatchFormUpt = ({ batchToEdit, onSubmit }) => {
     e.preventDefault();
     const date = new Date(batch.acquisitionDate);
     date.setDate(date.getDate() + 1);
-    const updatedDate = date.toISOString().split("T")[0];
+    const updatedDate = date.toISOString().split('T')[0];
     onSubmit(batchToEdit.id, { ...batch, acquisitionDate: updatedDate });
   };
 
@@ -44,6 +46,17 @@ const BatchFormUpt = ({ batchToEdit, onSubmit }) => {
           value={batch.totalItems}
           onChange={(e) =>
             setBatch({ ...batch, totalItems: parseInt(e.target.value, 10) })
+          }
+        />
+      </label>
+      <label>
+        Origen de la Compra:
+        <input
+          type="text"
+          maxLength="20"
+          value={batch.originPurchase}
+          onChange={(e) =>
+            setBatch({ ...batch, originPurchase: e.target.value })
           }
         />
       </label>

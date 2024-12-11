@@ -12,12 +12,12 @@ const batchItemSchema = new EntitySchema({
     },
     name: {
       type: "varchar",
-      length: 100,
+      length: 30,
       nullable: false,
     },
     type: {
       type: "enum",
-      enum: ["food", "utensil"], // El tipo de elemento
+      enum: ["comida", "utensilio", "equipamiento","herramienta"], // El tipo de elemento
       nullable: false,
     },
     quantity: {
@@ -27,6 +27,11 @@ const batchItemSchema = new EntitySchema({
     expirationDate: {
       type: "date",
       nullable: true, // Solo aplicable si es tipo comida
+    },
+    estate: {
+      type: "varchar",
+      length: 10,
+      nullable: false,
     },
   },
   relations: {

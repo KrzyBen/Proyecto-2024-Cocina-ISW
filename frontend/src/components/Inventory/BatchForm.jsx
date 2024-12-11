@@ -4,6 +4,7 @@ const BatchForm = ({ onSubmit }) => {
   const [newBatch, setNewBatch] = useState({
     acquisitionDate: '',
     totalItems: 1,
+    originPurchase: '', // Nuevo campo
   });
 
   const handleFormSubmit = (e) => {
@@ -35,6 +36,17 @@ const BatchForm = ({ onSubmit }) => {
           value={newBatch.totalItems}
           onChange={(e) =>
             setNewBatch({ ...newBatch, totalItems: parseInt(e.target.value, 10) })
+          }
+        />
+      </label>
+      <label>
+        Origen de la Compra:
+        <input
+          type="text"
+          maxLength="20"
+          value={newBatch.originPurchase}
+          onChange={(e) =>
+            setNewBatch({ ...newBatch, originPurchase: e.target.value })
           }
         />
       </label>

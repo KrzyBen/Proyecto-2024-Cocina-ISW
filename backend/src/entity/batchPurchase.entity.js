@@ -18,6 +18,11 @@ const purchaseBatchSchema = new EntitySchema({
       type: "int",
       nullable: false,
     },
+    originPurchase:{
+      type: "varchar",
+      length: 20,
+      nullable: false,
+    },
   },
   relations: {
     items: {

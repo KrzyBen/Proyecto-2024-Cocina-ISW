@@ -18,7 +18,6 @@ import UpdateIcon from '@assets/updateIcon.svg';
 import UpdateIconDisable from '@assets/updateIconDisabled.svg';
 import DeleteIconDisable from '@assets/deleteIconDisabled.svg';
 // otros
-
 import { useNavigate } from 'react-router-dom';
 
 const BatchesPage = () => {
@@ -79,10 +78,12 @@ const BatchesPage = () => {
     navigate(`/batchesItems/${batchId}/items`);
   };
 
+  //Campos de la tabla
   const columns = [
     { title: 'ID del Lote', field: 'id', width: 200, responsive: 2 },
-    { title: 'Fecha de Adquisición', field: 'acquisitionDate', width: 500, responsive: 2 },
-    { title: 'Total de Ítems', field: 'totalItems', width: 250, responsive: 3 }
+    { title: 'Fecha de Adquisición', field: 'acquisitionDate', width: 400, responsive: 2 },
+    { title: 'Total de Ítems', field: 'totalItems', width: 250, responsive: 3 },
+    { title: 'Origen de la Compra', field: 'originPurchase', width: 300, responsive: 3 }
   ];
 
   const handleSelectionChange = useCallback((selectedRows) => {

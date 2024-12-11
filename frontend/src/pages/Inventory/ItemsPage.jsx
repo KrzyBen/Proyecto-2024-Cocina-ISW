@@ -19,7 +19,6 @@ import UpdateIconDisable from '@assets/updateIconDisabled.svg';
 import DeleteIconDisable from '@assets/deleteIconDisabled.svg';
 // Otros
 
-
 const ItemsPage = () => {
   const { batchId } = useParams();
 
@@ -76,10 +75,11 @@ const ItemsPage = () => {
   };
 
   const columns = [
-    { title: 'ID del Ítem', field: 'id', width: 200, responsive: 2 },
-    { title: 'Nombre', field: 'name', width: 500, responsive: 2 },
-    { title: 'Cantidad', field: 'quantity', width: 250, responsive: 3 },
+    { title: 'ID del Ítem', field: 'id', width: 150, responsive: 2 },
+    { title: 'Nombre', field: 'name', width: 250, responsive: 2 },
+    { title: 'Cantidad', field: 'quantity', width: 200, responsive: 3 },
     { title: 'Tipo', field: 'type', width: 150, responsive: 4 },
+    { title: 'Estado', field: 'estate', width: 150, responsive: 4 },
     { title: 'Fecha de Vencimiento', field: 'expirationDate', width: 200, responsive: 4 },
   ];
 
